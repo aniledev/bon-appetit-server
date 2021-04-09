@@ -2,26 +2,33 @@
 require("dotenv").config();
 const express = require("express");
 const morgan = require("morgan");
-const helmet = require("helmet");
 const cors = require("cors");
+const helmet = require("helmet");
 const winston = require("winston");
 const { NODE_ENV, PORT } = require("./config");
-const errorHandler = require("./errorHandler");
-const router = require("./router");
+const errorHandler = require("./middleware/error-handler");
+const router = require("./endpoint1/router");
 const logger = require("./logger");
 
 const app = express();
 
-const morganOption = NODE_ENV === "production" ? "tiny" : "dev";
-
 //STANDARD MIDDLEWARE
-app.use(morgan(morganOption));
-app.use(helmet());
+app.use(
+  morgan(NODE_ENV === "production" ? "tiny" : "common", {
+    skip: () => NODE_ENV === "test",
+  })
+);
 app.use(cors());
+app.use(helmet());
 app.use(express.json());
 
-//ROUTES
-app.get("/", (req, res) => {
+// ROUTES
+app.use("/api/endpoint1", routerNameHere);
+app.use("/api/endpoint2", routerNameHere);
+app.use("/api/endpoint3", routerNameHere);
+
+// TEST ENDPOINT
+app.get("/api", (req, res) => {
   res.send("Hello, world!");
 });
 
