@@ -1,12 +1,12 @@
-// This is the module that holds the router for the different endpoints.
-const path = require("path");
-const express = require("express");
-const xss = require("xss");
-const service = require("./service");
+// // This is the module that holds the router for the different endpoints.
+// const path = require("path");
+// const express = require("express");
+// const xss = require("xss");
+// const service = require("./service");
 
-const Router = express.Router();
-const bodyParser = express.json();
+// const Router = express.Router();
+// const bodyParser = express.json();
 
-Router.route().get().post();
+// Router.route().get().post();
 
-module.exports = router;
+// module.exports = router;

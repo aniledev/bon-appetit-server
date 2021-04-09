@@ -23,9 +23,9 @@ app.use(helmet());
 app.use(express.json());
 
 // ROUTES
-app.use("/api/endpoint1", routerNameHere);
-app.use("/api/endpoint2", routerNameHere);
-app.use("/api/endpoint3", routerNameHere);
+// app.use("/api/endpoint1", routerNameHere);
+// app.use("/api/endpoint2", routerNameHere);
+// app.use("/api/endpoint3", routerNameHere);
 
 // TEST ENDPOINT
 app.get("/api", (req, res) => {
