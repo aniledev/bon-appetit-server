@@ -64,6 +64,8 @@ app.get("/api/restaurant/:id", async (req, res) => {
 // create an endpoint for POST a single restaurant
 app.post("/api/restaurant", (req, res) => {
   //destruture the req.body to send request to the server
+  // wrap your async actions in try catch block with simple error handling
+  // return the appropriate data back in a request
   res.status(201).send("Post restaurant");
 });
 
