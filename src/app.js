@@ -65,6 +65,7 @@ app.get("/api/restaurant/:id", async (req, res) => {
 app.post("/api/restaurant", async (req, res) => {
   //destruture the req.body to send request to the server
   // wrap your async actions in try catch block with simple error handling
+  // INSERT INTO restaurants (name, location, price_range) values ($1, $2, $3) returning * <= query for database
   try {
     const response = await db.query(
       "INSERT INTO restaurants (name, location, price_range) values ($1, $2, $3) returning *",
@@ -91,6 +92,8 @@ app.delete("/api/restaurant/:id", (req, res) => {
 app.put("/api/restaurant/:id", (req, res) => {
   // destructure the req.params to get the id of the restaurant that you want to GET and update
   // destructure teh req.body to get the new information that you are sending to the server
+  // wrap the async action in a try catch block for future error handling
+  // use UPDATE table_name property = value WHERE id = # to update a single row in the table
   res.status(200).send("Patch restaurants");
 });
 
