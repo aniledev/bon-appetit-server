@@ -28,19 +28,19 @@ app.use(express.json());
 // app.use("/api/endpoint3", routerNameHere);
 
 // create an endpoint for GET restaurants
-app.get("/api/restaurants", (req, res) => {
+app.get("/api/restaurant", (req, res) => {
   res.send("Get restaurants");
 });
 // create an endpoint for POST a single restaurant
-app.post("/api/restaurants", (req, res) => {
+app.post("/api/restaurant", (req, res) => {
   res.send("Post restaurant");
 });
 // create an endpoint for DELETING a single restaurant
-app.delete("/api/restaurants", (req, res) => {
+app.delete("/api/restaurant", (req, res) => {
   res.send("Delete restaurants");
 });
 // create an endpoint for PATCHING (updating) a single restaurant
-app.patch("/api/restaurants", (req, res) => {
+app.patch("/api/restaurant", (req, res) => {
   res.send("Patch restaurants");
 });
 
