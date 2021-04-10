@@ -87,6 +87,15 @@ app.delete("/api/restaurant/:id", async (req, res) => {
   // wrap the async action in a try catch block for future error handling
   // DELETE FROM table_name WHERE id = #
   // no data gets returned from a 204 request use end() to end the request response cycle
+  try {
+    const response = await db.query("DELETE FROM restaurants WHERE id = $1", [
+      req.params.id,
+    ]);
+    // console.log(response);
+    res.status(204).end();
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 // create an endpoint for PATCHING (updating) a single restaurant
