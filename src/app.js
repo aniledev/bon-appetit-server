@@ -9,6 +9,7 @@ const { NODE_ENV, PORT } = require("./config");
 const errorHandler = require("./middleware/error-handler");
 const router = require("./endpoint1/router");
 const logger = require("./logger");
+const db = require("./db");
 
 const app = express();
 
@@ -28,7 +29,9 @@ app.use(express.json());
 // app.use("/api/endpoint3", routerNameHere);
 
 // create an endpoint for GET restaurants
-app.get("/api/restaurant", (req, res) => {
+app.get("/api/restaurant", async (req, res) => {
+  const response = await db.query("SELECT * FROM restaurants");
+  console.log(response);
   res.status(200).send("Get restaurants");
 });
 
