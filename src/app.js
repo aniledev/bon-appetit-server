@@ -47,8 +47,18 @@ app.get("/api/restaurant", async (req, res) => {
 app.get("/api/restaurant/:id", async (req, res) => {
   // use the req.params to get the of the restaurant we want to get
   try {
+    const response = await db.query("SELECT * FROM restaurants WHERE id = $1", [
+      req.params.id,
+    ]);
+    console.log(response["rows"]);
+    res.status(200).json({
+      response: response.rows.length,
+      data: { restaurant: response.rows[0] },
+    });
+  } catch (error) {
+    console.log(error);
+  }
   // SELECT FROM * restaurants WHERE id = 1; <-- selecting a specific restaurant based on the id
-  res.status(200).send("Get restaurants");
 });
 
 // create an endpoint for POST a single restaurant
