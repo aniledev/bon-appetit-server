@@ -31,16 +31,20 @@ app.use(express.json());
 app.get("/api/restaurant", (req, res) => {
   res.send("Get restaurants");
 });
+// create an endpoint for GET a singlar restaurant
+app.get("/api/restaurant/:id", (req, res) => {
+  res.send("Get restaurants");
+});
 // create an endpoint for POST a single restaurant
 app.post("/api/restaurant", (req, res) => {
   res.send("Post restaurant");
 });
 // create an endpoint for DELETING a single restaurant
-app.delete("/api/restaurant", (req, res) => {
+app.delete("/api/restaurant/:id", (req, res) => {
   res.send("Delete restaurants");
 });
 // create an endpoint for PATCHING (updating) a single restaurant
-app.patch("/api/restaurant", (req, res) => {
+app.put("/api/restaurant/:id", (req, res) => {
   res.send("Patch restaurants");
 });
 
