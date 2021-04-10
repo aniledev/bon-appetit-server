@@ -83,9 +83,10 @@ app.post("/api/restaurant", async (req, res) => {
 });
 
 // create an endpoint for DELETING a single restaurant
-app.delete("/api/restaurant/:id", (req, res) => {
-  // destructure the req.params body to get the id of the restaurant that you want to GET
-  res.status(204).send("Delete restaurant");
+app.delete("/api/restaurant/:id", async (req, res) => {
+  // wrap the async action in a try catch block for future error handling
+  // DELETE FROM table_name WHERE id = #
+  // no data gets returned from a 204 request use end() to end the request response cycle
 });
 
 // create an endpoint for PATCHING (updating) a single restaurant
