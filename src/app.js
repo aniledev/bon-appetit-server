@@ -65,6 +65,7 @@ app.get("/api/restaurant/:id", async (req, res) => {
 app.post("/api/restaurant", (req, res) => {
   //destruture the req.body to send request to the server
   // wrap your async actions in try catch block with simple error handling
+  // INSERT INTO restaurants (name, location, price_range) values ($1, $2, $3) returning * <= query for database 
   // return the appropriate data back in a request
   res.status(201).send("Post restaurant");
 });
