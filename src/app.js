@@ -43,8 +43,11 @@ app.get("/api/restaurant", async (req, res) => {
 });
 
 // create an endpoint for GET a singular restaurant
-app.get("/api/restaurant/:id", (req, res) => {
-  // destructure the req.params body to get the id of the restaurant that you want to GET
+
+app.get("/api/restaurant/:id", async (req, res) => {
+  // use the req.params to get the of the restaurant we want to get
+  try {
+  // SELECT FROM * restaurants WHERE id = 1; <-- selecting a specific restaurant based on the id
   res.status(200).send("Get restaurants");
 });
 
