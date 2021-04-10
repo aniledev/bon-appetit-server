@@ -23,14 +23,26 @@ app.use(helmet());
 app.use(express.json());
 
 // ROUTES
-// app.use("/api/endpoint1", routerNameHere);
+// app.use("/api/restaurants", routerNameHere);
 // app.use("/api/endpoint2", routerNameHere);
 // app.use("/api/endpoint3", routerNameHere);
 
 // create an endpoint for GET restaurants
+app.get("/api/restaurants", (req, res) => {
+  res.send("Get restaurants");
+});
 // create an endpoint for POST a single restaurant
+app.post("/api/restaurants", (req, res) => {
+  res.send("Post restaurant");
+});
 // create an endpoint for DELETING a single restaurant
+app.delete("/api/restaurants", (req, res) => {
+  res.send("Delete restaurants");
+});
 // create an endpoint for PATCHING (updating) a single restaurant
+app.patch("/api/restaurants", (req, res) => {
+  res.send("Patch restaurants");
+});
 
 // TEST ENDPOINT
 app.get("/api", (req, res) => {
