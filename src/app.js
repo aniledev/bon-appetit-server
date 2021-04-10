@@ -30,12 +30,16 @@ app.use(express.json());
 
 // create an endpoint for GET restaurants
 app.get("/api/restaurant", async (req, res) => {
+  try {
     const response = await db.query("SELECT * FROM restaurants");
     console.log(response);
     res.status(200).json({
       response: response.rows.length,
       data: { restaurants: response["rows"] },
     });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 // create an endpoint for GET a singular restaurant
