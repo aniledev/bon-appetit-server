@@ -62,12 +62,23 @@ app.get("/api/restaurant/:id", async (req, res) => {
 });
 
 // create an endpoint for POST a single restaurant
-app.post("/api/restaurant", (req, res) => {
+app.post("/api/restaurant", async (req, res) => {
   //destruture the req.body to send request to the server
   // wrap your async actions in try catch block with simple error handling
-  // INSERT INTO restaurants (name, location, price_range) values ($1, $2, $3) returning * <= query for database 
+  try {
+    const response = await db.query(
+      "INSERT INTO restaurants (name, location, price_range) values ($1, $2, $3) returning *",
+      [req.body.name, req.body.location, req.body.price_range]
+    );
+    console.log(response);
+    res.status(201).json({
+      response: response.rows.length,
+      data: { restaurant: response.rows[0] },
+    });
+  } catch (error) {
+    console.log(error);
+  }
   // return the appropriate data back in a request
-  res.status(201).send("Post restaurant");
 });
 
 // create an endpoint for DELETING a single restaurant
