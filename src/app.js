@@ -47,7 +47,7 @@ app.post("/api/restaurant", (req, res) => {
 // create an endpoint for DELETING a single restaurant
 app.delete("/api/restaurant/:id", (req, res) => {
   // destructure the req.params body to get the id of the restaurant that you want to GET
-  res.status(204).send("Delete restaurants");
+  res.status(204).send("Delete restaurant");
 });
 
 // create an endpoint for PATCHING (updating) a single restaurant
