@@ -35,25 +35,26 @@ app.get("/api/restaurant", (req, res) => {
 // create an endpoint for GET a singular restaurant
 app.get("/api/restaurant/:id", (req, res) => {
   // destructure the req.params body to get the id of the restaurant that you want to GET
-  res.send("Get restaurants");
+  res.status(200).send("Get restaurants");
 });
 
 // create an endpoint for POST a single restaurant
 app.post("/api/restaurant", (req, res) => {
   //destruture the req.body to send request to the server
-  res.send("Post restaurant");
+  res.status(201).send("Post restaurant");
 });
 
 // create an endpoint for DELETING a single restaurant
 app.delete("/api/restaurant/:id", (req, res) => {
   // destructure the req.params body to get the id of the restaurant that you want to GET
-  res.send("Delete restaurants");
+  res.status(204).send("Delete restaurants");
 });
 
 // create an endpoint for PATCHING (updating) a single restaurant
 app.put("/api/restaurant/:id", (req, res) => {
-  // destructure the req.params body to get the id of the restaurant that you want to GET
-  res.send("Patch restaurants");
+  // destructure the req.params to get the id of the restaurant that you want to GET and update
+  // destructure teh req.body to get the new information that you are sending to the server
+  res.status(200).send("Patch restaurants");
 });
 
 // TEST ENDPOINT
