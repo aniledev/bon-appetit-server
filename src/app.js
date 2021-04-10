@@ -27,6 +27,11 @@ app.use(express.json());
 // app.use("/api/endpoint2", routerNameHere);
 // app.use("/api/endpoint3", routerNameHere);
 
+// create an endpoint for GET restaurants
+// create an endpoint for POST a single restaurant
+// create an endpoint for DELETING a single restaurant
+// create an endpoint for PATCHING (updating) a single restaurant
+
 // TEST ENDPOINT
 app.get("/api", (req, res) => {
   res.send("Hello, world!");
