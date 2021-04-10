@@ -14,7 +14,7 @@ const app = express();
 
 //STANDARD MIDDLEWARE
 app.use(
-  morgan(NODE_ENV === "production" ? "tiny" : "common", {
+  morgan(NODE_ENV === "production" ? "tiny" : "dev", {
     skip: () => NODE_ENV === "test",
   })
 );
