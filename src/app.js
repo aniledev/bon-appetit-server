@@ -32,7 +32,7 @@ app.use(express.json());
 app.get("/api/restaurant", async (req, res) => {
   try {
     const response = await db.query("SELECT * FROM restaurants");
-    console.log(response);
+    // console.log(response);
     res.status(200).json({
       response: response.rows.length,
       data: { restaurants: response["rows"] },
@@ -50,7 +50,7 @@ app.get("/api/restaurant/:id", async (req, res) => {
     const response = await db.query("SELECT * FROM restaurants WHERE id = $1", [
       req.params.id,
     ]);
-    console.log(response["rows"]);
+    // console.log(response["rows"]);
     res.status(200).json({
       response: response.rows.length,
       data: { restaurant: response.rows[0] },
@@ -71,7 +71,7 @@ app.post("/api/restaurant", async (req, res) => {
       "INSERT INTO restaurants (name, location, price_range) values ($1, $2, $3) returning *",
       [req.body.name, req.body.location, req.body.price_range]
     );
-    console.log(response);
+    // console.log(response);
     res.status(201).json({
       response: response.rows.length,
       data: { restaurant: response.rows[0] },
