@@ -1,8 +1,8 @@
 # Bon Appetit API
 
-Client Repo: https://github.com/aniledev/bon-appetit
-API Repo: https://github.com/aniledev/bon-appetit-server
-Live API hosted on Heroku: https://protected-ridge-35280.herokuapp.com/api
+- Client Repo: https://github.com/aniledev/bon-appetit
+- API Repo: https://github.com/aniledev/bon-appetit-server
+- Live API hosted on Heroku: https://protected-ridge-35280.herokuapp.com/api
 
 ## Application Summary
 
