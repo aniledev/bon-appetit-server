@@ -23,6 +23,7 @@ INSERT INTO "reviews"
 VALUES
     (1, 'Anabelle', 'Loved it!', 4),
     (1, 'Wyman', 'Restaurant was amazing.', 5),
+    (1, 'Axel', 'Would not ever eat here if I was starving', 1),
     (2, 'Sim', 'Would not ever eat here if I was starving', 1),
     (2, 'Reba', 'Compliments to the chef!', 4),
     (3, 'Tavares', 'DON NOT GET THE OYSTERS.', 2),
