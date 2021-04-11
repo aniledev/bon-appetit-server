@@ -63,7 +63,7 @@ app.get("/api/restaurant/:id", async (req, res) => {
     );
 
     // console.log(response["rows"]);
-    console.log(reviews.rows);
+    // console.log(reviews.rows);
     res.status(200).json({
       response: response.rows.length,
       data: { restaurant: response.rows[0], reviews: reviews.rows },
@@ -141,7 +141,7 @@ app.post("/api/restaurant/:id/review", async (req, res) => {
       "INSERT INTO reviews (restaurant_id, name, review, rating) values ($1, $2, $3, $4) returning *;",
       [req.params.id, req.body.name, req.body.review, req.body.rating]
     );
-    console.log(response);
+    // console.log(response);
     res.status(201).json({
       response: response.rows.length,
       data: {
