@@ -128,6 +128,26 @@ app.put("/api/restaurant/:id", async (req, res) => {
   }
 });
 
+// write an endpoint for adding a review to a restaurant
+// INSERT INTO reviws() values ()
+app.post("/api/restaurant/:id/review", async (req, res) => {
+  try {
+    const response = await db.query(
+      "INSERT INTO reviews (restaurant_id, name, review, rating) values ($1, $2, $3, $4) returning *;",
+      [req.params.id, req.body.name, req.body.review, req.body.rating]
+    );
+    console.log(response);
+    res.status(201).json({
+      response: response.rows.length,
+      data: {
+        review: response.rows[0],
+      },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 // TEST ENDPOINT
 app.get("/api", (req, res) => {
   res.send("Hello, world!");
