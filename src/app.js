@@ -51,9 +51,10 @@ app.get("/api/restaurant", async (req, res) => {
 app.get("/api/restaurant/:id", async (req, res) => {
   // use the req.params to get the of the restaurant we want to get
   try {
-    const response = await db.query("SELECT * FROM restaurants WHERE id = $1", [
-      req.params.id,
-    ]);
+    const response = await db.query(
+      "SELECT * FROM restaurants LEFT JOIN (SELECT restaurant_id, COUNT(*), TRUNC(AVG(rating),1) as average_rating FROM reviews GROUP BY restaurant_id) reviews on restaurants.id = reviews.restaurant_id WHERE id = $1",
+      [req.params.id]
+    );
 
     // make another request to get related reviews for a single restauran
     const reviews = await db.query(
