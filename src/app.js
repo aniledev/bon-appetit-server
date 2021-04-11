@@ -50,10 +50,18 @@ app.get("/api/restaurant/:id", async (req, res) => {
     const response = await db.query("SELECT * FROM restaurants WHERE id = $1", [
       req.params.id,
     ]);
+
+    // make another request to get related reviews for a single restauran
+    const reviews = await db.query(
+      "SELECT * FROM reviews WHERE restaurant_id = $1",
+      [req.params.id]
+    );
+
     // console.log(response["rows"]);
+    console.log(reviews.rows);
     res.status(200).json({
       response: response.rows.length,
-      data: { restaurant: response.rows[0] },
+      data: { restaurant: response.rows[0], reviews: reviews.rows },
     });
   } catch (error) {
     console.log(error);
