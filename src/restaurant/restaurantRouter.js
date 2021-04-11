@@ -81,6 +81,26 @@ restaurantRouter
     } catch (error) {
       console.log(error);
     }
+  })
+  .put("/:id", async (req, res) => {
+    // destructure the req.params to get the id of the restaurant that you want to GET and update
+    // destructure teh req.body to get the new information that you are sending to the server
+    // wrap the async action in a try catch block for future error handling
+    // use UPDATE table_name property = value WHERE id = # to update a single row in the table
+    // return data from the response using query
+    try {
+      const response = await db.query(
+        "UPDATE restaurants SET name = $1, location = $2, price_range = $3 WHERE id = $4 returning *",
+        [req.body.name, req.body.location, req.body.price_range, req.params.id]
+      );
+      // console.log(response.rows[0]);
+      res.status(200).json({
+        response: response.rows.length,
+        data: { restaurant: response.rows[0] },
+      });
+    } catch (error) {
+      console.log(error);
+    }
   });
 
 module.exports = restaurantRouter;
