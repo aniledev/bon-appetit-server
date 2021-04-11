@@ -1,6 +1,57 @@
 # Bon Appetit API
 
-## Local dev setup
+Client Repo: https://github.com/aniledev/bon-appetit
+API Repo: https://github.com/aniledev/bon-appetit-server
+Live API hosted on Heroku: https://protected-ridge-35280.herokuapp.com/api
+
+## Application Summary
+
+This backend server is to be used with the client aniledev/bon-appetit and provides support restaurant tracker and review application. This repo directory is organized by source files, files related to the /api/resaturant endpoint, and configuration files.
+
+Each endpoint uses the express.Router class to create modularized route handlers. Additionally, the routers make use node-postgres, modules for interfacing with PostgreSQL databases.
+
+## Technology Used
+
+- Node
+- Express
+- PostgreSQL
+- cors
+- helmet
+- morgan
+- node-postgres
+- Heroku
+
+## Endpoints
+
+### Restaurant
+
+`GET /api/restaurant`<br/>
+
+`POST /api/restaurant`<br/>
+**This endpoint requires a request body in the form of `const { name, location, price_range } = req.body`.**
+
+`GET /api/restaurant/:id`<br/>
+
+`PUT /api/restaurant/:id`<br/>
+**This endpoint requires a request body in the form of `const { name, location, price_range } = req.body`.**
+
+`DELETE /api/restaurant/:id`<br/>
+
+`POST /api/restaurant/:id/review`<br/>
+**This endpoint requires a request body in the form of `const { name, review, rating } = req.body`.**
+
+## Status Codes
+
+The API here returns the following status codes:
+
+| Status Code | Description           |
+| ----------- | --------------------- |
+| 200         | Ok                    |
+| 404         | Bad Request           |
+| 400         | Not Found             |
+| 500         | Internal Server Error |
+
+## Local Dev Setup
 
 If using user `dunder-mifflin`:
 
