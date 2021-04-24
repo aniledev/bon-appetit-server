@@ -32,7 +32,7 @@
 
 This backend server is to be used with the client aniledev/bon-appetit and provides support restaurant tracker and review application. This repo directory is organized by source files, files related to the /api/restaurant endpoint, and configuration files.
 
-Each endpoint uses the express.Router class to create modularized route handlers. Additionally, the routers make use of node-postgres, a module for easy interfacing with PostgreSQL databases.
+Each endpoint uses the express.Router class to create modularized route handlers. Additionally, the routers make use of [node-postgres](https://node-postgres.com/), a module for easy interfacing with PostgreSQL databases.
 
 ## API Documentation
 
@@ -132,7 +132,7 @@ Run the migrations down `npm run migrate -- 0`
 - cors
 - helmet
 - morgan
-- node-postgres
+- [node-postgres](https://node-postgres.com/)
 
 
 ## Deployment
