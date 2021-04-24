@@ -111,11 +111,11 @@ And `npm test` should work at this point.
 
 ## Scripts
 
-Start the application `npm start`
+Start the application `npm run start`
 
 Start nodemon for the application `npm run dev`
 
-Run the tests mode `npm test`
+Run the test mode `npm test`
 
 Run the migrations up `npm run migrate`
 
