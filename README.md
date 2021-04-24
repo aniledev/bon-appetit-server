@@ -8,7 +8,6 @@
 <img alt="GitHub repo size in bytes" src="https://img.shields.io/github/repo-size/aniledev/bon-appetit-server">
 </p>
 
-
 ## Contents
 
 <details open="open">
@@ -26,7 +25,6 @@
     <li><a href="#connect-with-me">Connect With Me</a></li>
   </ol>
 </details>
-
 
 ## Application Summary
 
@@ -68,7 +66,6 @@ The API here returns the following status codes:
 | 400         | Not Found             |
 | 500         | Internal Server Error |
 
-
 ## Local Dev Setup
 
 If using user `dunder-mifflin`:
@@ -86,7 +83,6 @@ npm install
 npm run migrate
 env MIGRATION_DB_NAME=bon-appetit-test npm run migrate
 ```
-
 
 ## Configuring PostgreSQL
 
@@ -106,8 +102,8 @@ datestyle = 'iso, mdy'
 timezone = 'UTC'
 #timezone_abbreviations = 'Default'     # Select the set of available time zone
 ```
-And `npm test` should work at this point.
 
+And `npm test` should work at this point.
 
 ## Scripts
 
@@ -121,32 +117,28 @@ Run the migrations up `npm run migrate`
 
 Run the migrations down `npm run migrate -- 0`
 
-
 ## Built With
 
 <p align="left"> <a href="https://expressjs.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://heroku.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://mochajs.org" target="_blank"> <img src="https://www.vectorlogo.zone/logos/mochajs/mochajs-icon.svg" alt="mocha" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> </p>
 
-
 ## Technical Aspects
 
-- cors
-- helmet
-- morgan
+- [cors](https://www.npmjs.com/package/cors)
+- [helmet](https://www.npmjs.com/package/helmet)
+- [morgan](https://www.npmjs.com/package/morgan)
 - [node-postgres](https://node-postgres.com/)
-
 
 ## Deployment
 
 View the client repo [here](https://github.com/aniledev/bon-appetit). The live api is hosted on [Heroku](https://protected-ridge-35280.herokuapp.com/api). The live client is hosted with [Vercel](bon-appetit-theta.vercel.app).
-
 
 ## Acknowledgements
 
 - [Font Awesome](https://fontawesome.com)
 - [Thinkful Coding Bootcamp](https://www.thinkful.com/)
 
-
 ## Connect With Me
+
 🔭 I’m currently working on **mastering data structures and complex algorithms.**
 
 🌱 I’m currently learning **the fundamentals of Angular.**
