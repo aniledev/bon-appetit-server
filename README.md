@@ -88,7 +88,7 @@ env MIGRATION_DB_NAME=bon-appetit-test npm run migrate
 ```
 
 
-## Configuring Postgres
+## Configuring PostgreSQL
 
 For tests involving time to run properly, configure your Postgres database to run in the UTC timezone.
 
