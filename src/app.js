@@ -4,12 +4,9 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
-const winston = require("winston");
 const { NODE_ENV, PORT } = require("./config");
 const errorHandler = require("./middleware/error-handler");
 const restaurantRouter = require("./restaurant/restaurantRouter");
-const logger = require("./logger");
-const db = require("./db");
 
 const app = express();
 
@@ -24,6 +21,7 @@ app.use(helmet());
 app.use(express.json());
 
 // ROUTES
+
 app.use("/api/restaurant", restaurantRouter);
 
 // TEST ENDPOINT
