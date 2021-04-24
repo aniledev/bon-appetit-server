@@ -32,8 +32,7 @@ app.get("/api", (req, res) => {
 });
 
 // CATCH ANY THROWN ERRORS AND THEN DEFINE THE ERROR AND KEEP THE APPLICATION RUNNING;
-//STILL MIDDLEWARE
 app.use(errorHandler);
-
 //PIPELINE ENDS
+
 module.exports = app;

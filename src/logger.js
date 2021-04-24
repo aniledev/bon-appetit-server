@@ -1,4 +1,3 @@
-// THIS IS WHERE YOU SHOULD REFACTOR YOUR LOGGER SUCH AS WINSTON OR ANOTHER NPM PACKAGE
 const winston = require("winston");
 const { NODE_ENV } = require("./config");
 
