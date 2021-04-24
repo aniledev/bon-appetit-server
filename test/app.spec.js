@@ -9,13 +9,11 @@ describe("App", () => {
 describe("GET /", () => {
   it("GET /api/restaurant  responds with 200 with correct response", () => {
     return supertest(app)
-      .get("/api/restaurant") // invoke the endpoint
-      .expect(200) // assert that you get a 200  OK status
+      .get("/api/restaurant")
+      .expect(200)
       .expect("Content-Type", /json/)
       .then((res) => {
-        // make sure you get an object
         expect(res.body).to.be.an("object");
-        // object  must not be empty
         expect(res.body).to.have.lengthOf.at.least(1);
       });
   });
@@ -24,13 +22,11 @@ describe("GET /", () => {
 describe("GET /:id", () => {
   it("GET /api/restaurant/:id responds with 200 with correct response", () => {
     return supertest(app)
-      .get("/:id") // invoke the endpoint
-      .expect(200) // assert that you get a 200  OK status
+      .get("/:id")
+      .expect(200)
       .expect("Content-Type", /json/)
       .then((res) => {
-        // make sure you get an object
         expect(res.body).to.be.an("object");
-        // object must not be empty
         expect(res.body).to.have.lengthOf.at.least(1);
       });
   });
