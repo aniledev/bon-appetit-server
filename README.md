@@ -142,9 +142,7 @@ View the client repo [here](https://github.com/aniledev/bon-appetit). The live a
 
 ## Acknowledgements
 
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Font Awesome](https://fontawesome.com)
-- [Jest](https://jestjs.io/)
 - [Thinkful Coding Bootcamp](https://www.thinkful.com/)
 
 
