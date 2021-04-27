@@ -2,7 +2,6 @@
 const express = require("express");
 const restaurantRouter = express.Router();
 const db = require("../db");
-const bodyParser = express.json();
 
 restaurantRouter
   .get("/", async (req, res, next) => {

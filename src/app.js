@@ -4,6 +4,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const helmet = require("helmet");
+const bodyParser = express.json();
 const { NODE_ENV } = require("./config");
 const errorHandler = require("./middleware/error-handler");
 const restaurantRouter = require("./restaurant/restaurantRouter");
@@ -18,7 +19,7 @@ app.use(
 );
 app.use(cors());
 app.use(helmet());
-app.use(express.json());
+app.use(bodyParser);
 
 // ROUTES
 
