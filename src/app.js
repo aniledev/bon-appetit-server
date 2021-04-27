@@ -8,7 +8,6 @@ const bodyParser = express.json();
 const { NODE_ENV } = require("./config");
 const errorHandler = require("./middleware/error-handler");
 const restaurantRouter = require("./restaurant/restaurantRouter");
-
 const app = express();
 
 //STANDARD MIDDLEWARE
