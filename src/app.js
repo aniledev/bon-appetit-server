@@ -21,7 +21,6 @@ app.use(helmet());
 app.use(bodyParser);
 
 // ROUTES
-
 app.use("/api/restaurant", restaurantRouter);
 
 // TEST ENDPOINT
