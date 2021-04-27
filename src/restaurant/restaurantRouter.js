@@ -86,7 +86,6 @@ restaurantRouter
     }
   })
   .delete("/:id", async (req, res) => {
-    // DELETE FROM table_name WHERE id = #
     try {
       const response = await db.query("DELETE FROM restaurants WHERE id = $1", [
         req.params.id,

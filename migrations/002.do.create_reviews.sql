@@ -1,4 +1,3 @@
--- This module is used to create migrations is server is community with database.
 CREATE TABLE "reviews"
 (
     "id" SERIAL PRIMARY KEY NOT NULL,
